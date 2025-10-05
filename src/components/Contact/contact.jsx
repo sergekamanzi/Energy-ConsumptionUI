@@ -82,7 +82,7 @@ const Contact = () => {
           </div>
 
           <div className="brand-col">
-            <div className="brand">Bams</div>
+            <div className="brand">Powerlytics</div>
             <a className="brand-phone" href="tel:+2348146842062">+250 780032791</a>
             <a className="brand-mail" href="mailto:bamshotel@gmail.com">info@powerlytics.com</a>
 
