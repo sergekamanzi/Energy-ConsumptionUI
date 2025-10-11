@@ -11,12 +11,26 @@ const Auth = () => {
   const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
 
+  // Small clickable logo badge used above each form
+  const LogoBadge = () => (
+    <div
+      className="auth-logo"
+      onClick={() => navigate('/')}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') navigate('/'); }}
+      aria-label="Go to home"
+    >
+      <img src="/logo3.png" alt="Powerlytics logo" className="auth-logo-img" />
+      <span className="auth-logo-text">Powerlytics</span>
+    </div>
+  );
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsSignIn(true);
     }, 200);
 
-    // Check screen size on mount and resize
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
@@ -74,6 +88,7 @@ const Auth = () => {
         <div className="col align-items-center flex-col sign-up">
           <div className="form-wrapper align-items-center">
             <div className="form sign-up">
+              <LogoBadge />
               <div className="form-header">
                 <h2>Create an Account</h2>
                 <p>Join us today and get started</p>
@@ -140,6 +155,7 @@ const Auth = () => {
         <div className="col align-items-center flex-col sign-in">
           <div className="form-wrapper align-items-center">
             <div className="form sign-in">
+              <LogoBadge />
               <div className="form-header">
                 <h2>Welcome Back</h2>
                 <p>Please sign in to your account</p>
